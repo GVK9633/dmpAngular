@@ -1,0 +1,45 @@
+<div class="sme-content">
+  <div class="container-fluid">
+    <br />
+    <h4>Welcome back, User</h4>    
+    <div id="cards" style="margin:0;text-align: center;padding:5%;">
+      <div style="float:left; height:50vh;width:40%; border:1px solid #86bc25;padding:5px;">
+        <div style="text-align:center;"><h6>Previous Sessions</h6></div>
+        <br />     
+        <div style="text-align:left;overflow-y:auto; height:70%;">
+          <div class="table-responsive">
+            <table class="table table-hover" style="width:70%;">
+              <!--<tr>
+                <th>Sr.No</th>
+                <th >Product Name</th>
+                <th>Modified Date</th>
+              </tr>-->
+              <tbody>
+                <tr *ngFor="let data of SMEProducts; let i = index">
+                  <td>{{i+1}}.</td>
+                  <td (click)="setSmeAndVersionID(data.smeID,data.versionID)" style="cursor:pointer;"><span>{{data.name }}</span></td>
+                  <td><span>{{data.modifiedDate | date:'shortDate' }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div style="float:left; height:50vh;width:40%;border:1px solid #86bc25;padding:5px;margin-left:20%;">
+        <div style="text-align:center;"><h6>New Session</h6></div>
+        <div style="text-align:left;">
+          Please click below to give your scores for a new tool or alter the existing scores
+        </div>
+        <br />
+        <div style="text-align:center;">
+          <a href="#" routerLink="../products" routerLinkActive="active" class="btn btn-success deloitte-green-bg">
+            Begin
+            &nbsp;
+            <i class="now-ui-icons arrows-1_minimal-right"></i>
+          </a>
+        </div>
+      </div>
+      <div style="clear:both;"></div>
+    </div>    
+  </div>
+</div>
